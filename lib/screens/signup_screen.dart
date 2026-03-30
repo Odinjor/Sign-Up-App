@@ -22,8 +22,11 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0F0F1A),
       appBar: AppBar(
         title: const Text('Sign Up'),
+        backgroundColor: const Color(0xFF1A1A2E),
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,17 +36,31 @@ class _SignupScreenState extends State<SignupScreen> {
             children: [
               const Text(
                 'Create Your Account',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               const SizedBox(height: 20),
               
               // 👤 Name Field
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
                   labelText: 'Full Name',
-                  prefixIcon: Icon(Icons.person),
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+                  prefixIcon: Icon(Icons.person, color: const Color(0xFF06C94F).withOpacity(0.7)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF06C94F), width: 2),
+                  ),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -57,10 +74,20 @@ class _SignupScreenState extends State<SignupScreen> {
               // 📧 Email Field
                TextFormField(
                 controller: _emailController,
-                decoration: const InputDecoration(
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
                   labelText: 'Email Address',
-                  prefixIcon: Icon(Icons.email),
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+                  prefixIcon: Icon(Icons.email, color: const Color(0xFF06C94F).withOpacity(0.7)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF06C94F), width: 2),
+                  ),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -78,10 +105,20 @@ class _SignupScreenState extends State<SignupScreen> {
                TextFormField(
                 controller: _passwordController,
                 obscureText: true,
-                decoration: const InputDecoration(
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
                   labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+                  prefixIcon: Icon(Icons.lock, color: const Color(0xFF06C94F).withOpacity(0.7)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF06C94F), width: 2),
+                  ),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -108,12 +145,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
+                  backgroundColor: const Color(0xFF06C94F),
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                 ),
                 child: const Text(
                   'Sign Up',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),
             ],
