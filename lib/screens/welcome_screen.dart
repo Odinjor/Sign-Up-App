@@ -80,12 +80,19 @@ class _WelcomeScreen extends State<WelcomeScreen> with TickerProviderStateMixin{
           const SizedBox(height: 24),
           Text(
             _page.title,
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
           const SizedBox(height: 12),
           Text(
             _page.subtitle,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white.withOpacity(0.8),
+            ),
           ),
         ],
       ),
