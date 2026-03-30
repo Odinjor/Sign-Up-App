@@ -97,12 +97,16 @@ class _SignupScreenState extends State<SignupScreen> {
               
               // 🚀 Sign Up Button
               ElevatedButton(
-                Navigator.pushReplacement(
-  context,
-  MaterialPageRoute(
-    builder: (context) => SuccessScreen(userName: _nameController.text),
-  ),
-);
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SuccessScreen(userName: _nameController.text),
+                      ),
+                    );
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
